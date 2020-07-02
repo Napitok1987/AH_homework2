@@ -12,18 +12,12 @@ for row in reader:
     name = row[0]
     surname = row[1]
     email = row[2]
-    position = row[3]
+    position = str.lower((row[3]))
     social_profile = row[4]
     if 'developer' in position:
         writer.writerow([name, surname, email, position, social_profile])
         rows_count = rows_count + 1
-    elif 'Developer' in position:
-        writer.writerow([name, surname, email, position, social_profile])
-        rows_count = rows_count + 1
     elif 'engineer' in position:
-        writer.writerow([name, surname, email, position, social_profile])
-        rows_count = rows_count + 1
-    elif 'Engineer' in position:
         writer.writerow([name, surname, email, position, social_profile])
         rows_count = rows_count + 1
 if rows_count in range(2, 4):
